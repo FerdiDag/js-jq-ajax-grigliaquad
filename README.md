@@ -1,1 +1,1 @@
-js-jq-ajax-grigliaquad
+ js-jq-grigliaquadrati
