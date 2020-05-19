@@ -13,6 +13,7 @@ $(document).ready(function() {
 
 
     $('.quadrato').on('click', function() {
+        var quadratoCurrent = $(this);
         $.ajax({
             url: "https://flynn.boolean.careers/exercises/api/random/int",
             'method': 'GET',
@@ -20,15 +21,15 @@ $(document).ready(function() {
                 var numero_pc = data.response;
                 console.log(numero_pc);
 
-                $('.quadrato').click(function() {
-                 $(this).text(numero_pc);
-                    if (numero_pc <= 5) {
-                        $(this).css('background-color', 'yellow');
-                    } else if (numero_pc > 5) {
-                        $(this).css('background-color', 'black');
-                    }
 
-                });
+                quadratoCurrent.text(numero_pc);
+                if (numero_pc <= 5) {
+                    quadratoCurrent.css('background-color', 'yellow');
+                } else if (numero_pc > 5) {
+                    quadratoCurrent.css('background-color', 'black');
+                }
+
+
 
 
             },
