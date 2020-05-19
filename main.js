@@ -26,7 +26,7 @@ $(document).ready(function() {
                 if (numero_pc <= 5) {
                     quadratoCurrent.css('background-color', 'yellow');
                 } else if (numero_pc > 5) {
-                    quadratoCurrent.css('background-color', 'black');
+                    quadratoCurrent.css('background-color', 'grey');
                 }
 
 
