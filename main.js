@@ -7,79 +7,48 @@
 
 
 
+$(document).ready(function() {
 
 
 
 
+    $('.quadrato').on('click', function() {
+        $.ajax({
+            url: "https://flynn.boolean.careers/exercises/api/random/int",
+            'method': 'GET',
+            success: function(data) {
+                var numero_pc = data.response;
+                console.log(numero_pc);
+
+                $('.quadrato').click(function() {
+                 $(this).text(numero_pc);
+                    if (numero_pc <= 5) {
+                        $(this).css('background-color', 'yellow');
+                    } else if (numero_pc > 5) {
+                        $(this).css('background-color', 'black');
+                    }
+
+                });
+
+
+            },
+            error: function() {
+                alert("E' avvenuto un errore.");
+            }
+
+        });
 
 
 
 
+    });
 
 
 
 
+});
 
 
+// function minoreOmaggiore(numeropc) {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // genero 25 numeri random tra 0 e 10
-// function generateRandom(min, max) {
-//     return Math.floor(Math.random() * (max - min + 1)) + min;
-// }
-// //
-// // var randomNumbers = [];
-//
-// // var numero_generato = generateRandom(0, 10);
-//
-//
-// // do {
-// //     var numero_random = generateRandom(0, 10);
-// //
-// // //     randomNumbers.push(numero_random);
-// // //
-// // // } while (randomNumbers.length < 25);
-// // //
-// // // console.log(randomNumbers);
-//
-//
-// $('.quadrato').each(function() {
-//     var numero_generato = generateRandom(0, 10);
-//     console.log(numero_generato);
-//     $(this).append(numero_generato);
-//     // se il numero da inserire è dispari, scriverlo in nero
-//     if (numero_generato % 2) {
-//         $(this).css('color', 'black');
-//     } else if (numero_generato == 0) {
-//         //se è 0 in verde
-//         $(this).css('color', 'green');
-//     } else {
-//         // se il numero da inserire è pari, scriverlo in rosso
-//         $(this).css('color', 'red');
-//     }
-//
-//     console.log($(this).append());
-// });
+// minoreOmaggiore(numero_cliccato)
